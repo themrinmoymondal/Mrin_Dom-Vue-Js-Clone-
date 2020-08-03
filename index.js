@@ -1,3 +1,8 @@
+/*
+  Owner Mrinmoy Mondal
+  For Education Use Only.
+*/
+
 function $(el, s){
 	return (s ? document.querySelectorAll(el) : document.querySelector(el));
 }
