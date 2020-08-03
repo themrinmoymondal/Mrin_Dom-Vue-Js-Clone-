@@ -1,0 +1,63 @@
+<!--
+	 Demo HTML Page
+	 For Vue Js Clone (Mrin_dom.js)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div class="app1" m-if="seen" m-for="var f of fire"> 
+	 {{message }} {{message}} {{msg2}} {{f.txt}} {{f.extra}} {{f.extra}} {{f.id}} <br>
+</div>
+<div class="app2" >
+	{{'jsOn'}} 
+	
+		{{var i = 0;}}
+		{{ 
+		 	document.onclick = function(){
+		 		console.log(i);
+		 	}
+		 }}
+		 
+		 {{document.write(i + 5)}}
+	
+	{{'jsOff'}}
+
+	{{ i  }} {{j }} {{ j}} {{i}}
+</div>
+<script src="index.js"></script>
+<script>
+setup({
+	title: 'Hello App',
+});
+
+var app2 = new mrin({
+	el: '.app1',
+	data: {
+		message: 'Hll World',
+		msg2: 'Hii',
+		seen: true,
+		fire: [
+		 {id:1, txt:'txt1', extra:'Something more 1'},
+		 {id:2, txt:'txt2', extra:'Something more 2'},
+		 {id:3, txt:'txt3', extra:'Something more 3'},
+		 {id:4, txt:'txt4', extra:'Something more 4'},
+		]
+	},
+	
+});
+
+var app2 = new mrin({
+	el: '.app2',
+	data: {
+		j: 'Hll World',
+		i: 'Hii',
+	},
+	
+});
+
+</script>
+</body>
+</html>
