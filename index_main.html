@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{margin:0;padding:0;box-sizing:border-box;}
+nav{
+	background:rgba(255,25,10,1);
+	color:#fff;
+	padding:10px 18px;
+}
+main {
+	padding:6px 8px;
+}
+.ex{
+	width:80%;
+	background:#eee;
+	padding:8px;
+	border-left:5px solid #ccc;
+}
+</style>
+<title></title>
+</head>
+<body>
+<nav><center><h3>This is An Example Site</h3></center></nav><br>
+
+<main>
+You can use {{ [You Varibale] }} and the output will shown: <br>
+	<div class="ex">
+		<h4>Example 1</h4>
+		<h6 style="margin-top:3px">Js</h6>
+		<div style="margin-top:5px;">
+		var app = new mrin({<br>
+			<span style="margin-left:15px">el: '.app1,<br></span>
+			<span style="margin-left:15px">data: {
+				msg: 'Hello World'
+			},<br></span>
+		});</div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">HTML</h6>
+		<div style="margin-top:5px">&lt;div class="app1"> {{ msg }} &lt;/div></div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">Output</h6>
+		<div class="output app1" style="margin:5px">
+			{{msg}}
+		</div>
+	</div>
+	<br><hr><br>
+	<div class="ex">
+		<h4>Example 2</h4>
+		<h6 style="margin-top:3px">Js</h6>
+		<div style="margin-top:5px;">
+		var app = new mrin({<br>
+			<span style="margin-left:15px">el: '.app2,<br></span>
+			<span style="margin-left:15px">data: {<br><span>
+				<span style="margin-left:30px">dat: ['txt1','txt2,'txt3']</span><br>
+			<span style="margin-left:15px">},<br></span></span>
+		});</div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">HTML</h6>
+		<div style="margin-top:5px">&lt;div class="app2" m-for="var item of dat"> {{ item.txt }} &lt;/div></div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">Output</h6>
+		<div class="output app2" m-for="var item in dat" style="margin:5px">
+			{{item.txt}}<br>
+		</div>
+	</div>
+	<br><hr><br>
+	<div class="ex">
+		<h4>Example 3</h4>
+		<h6 style="margin-top:3px">Js</h6>
+		<div style="margin-top:5px;">
+		var app = new mrin({<br>
+			<span style="margin-left:15px">el: '.app3,<br></span>
+			<span style="margin-left:15px">data: {
+				msg: 'Hello World'
+			},<br></span>
+		});</div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">HTML</h6>
+		<div style="margin-top:5px">&lt;div class="app3."> {{ msg }}<br> {{'jsOn'}}
+		 <br>
+		 {{console.log('I am A Html elment')}}
+		 {{'jsOff'}} <br>&lt;/div></div>
+		<hr style="margin-top:9px">
+		<h6 style="margin-top:5px">Output</h6>
+		<div class="output app3" style="margin:5px">
+			{{'jsOn'}} 
+			{{console.log('I am A Html elment');}} 
+			{{'jsOff'}} 
+			
+			{{msg}}
+		</div>
+	</div>
+	<br><hr><br>
+</main>
+<script src="index.js"></script>
+<script type="text/javascript">
+
+var app1 = new mrin({
+	el: '.app1',
+	data: {
+		msg: 'Hello World'
+	},
+});
+
+var app2 = new mrin({
+	el: '.app2',
+	data: {
+		dat: [
+			{id:1, txt:'txt1', extra:'Something more 1'},
+			{id:2, txt:'txt2', extra:'Something more 2'},
+			{id:3, txt:'txt3', extra:'Something more 3'},
+			{id:4, txt:'txt4', extra:'Something more 4'},
+		]
+	},
+});
+
+var app3 = new mrin({
+	el: '.app3',
+	data: {
+		msg: 'You Can Also Use Js code in Html also'
+	},
+});
+
+</script>
+</body>
+</html>
